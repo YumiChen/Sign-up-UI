@@ -1,0 +1,153 @@
+$panel_text_color: #604839
+$subtitlecolor1: #aa2917
+$subtitlecolor2: #eaa454
+$titlecolor: #fffdfc
+$titleshadow: #b79f91
+
+$backgroundcolor1: #fff7f2
+$backgroundcolor2: #ce9f79
+
+$inputlinecolor: #c1a07a
+
+$buttoncolor: #77d1ef
+$buttonshadow: #4e99b2
+$buttontextcolor: #fffdfc
+$hoverbuttoncolor: #e0a97f
+$hoverbuttonshadow: #997357
+
+$panelshadow: rgba(76, 57, 42,0.4)
+
+$signincolorhover: #a85817
+
+
+
+@mixin block($w,$h)
+  width: $w
+  height: $h
+
+  
+  
+*
+  font-family: Lucida Console
+  // border: solid 1px black
+  position: relative
+  color: $panel_text_color
+
+.dailyui
+  margin: 15px
+  position: absolute
+  & h1,& span
+    font-family: Lobster
+    line-height: 8px 
+  & span
+    font-size: 20px
+
+html,body
+  width: 100%
+  height: 100%
+  margin: 0px
+  padding: 0px
+  overflow: hidden
+  z-index: -3
+  background: radial-gradient(circle,$backgroundcolor1,$backgroundcolor2)
+  
+.panel
+  +block(270px,500px)
+  // background: radial-gradient(circle at 80px 40px, #fff, transparent)
+  margin-top: 60px
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+  padding-top: 30px
+  box-shadow: 0px 0px 13px 3px $panelshadow
+  box-sizing: border-box
+  overflow: hidden
+  position: relative
+  
+  & img
+    top: -120px
+    left: -75px
+    position: absolute
+    z-index: -1
+    filter: blur(2px) opacity(0.7)
+    
+  
+  & .alltitle
+    z-index: 2
+    // margin-top: 10px
+    line-height: 38px
+    & .title
+      font-family: Oswald
+      font-size: 60px
+      color: $titlecolor
+      text-shadow: 0px 0px 8px $titleshadow
+    & .subtitle
+      padding: 0px 20px
+      transform-origin: left bottom
+      transform: rotate(3deg)
+      font-family: Yellowtail
+      font-size: 50px
+      background: linear-gradient(90deg,$subtitlecolor1,$subtitlecolor2)
+      -webkit-background-clip: text
+      -webkit-text-fill-color: transparent
+      // text-shadow: 10px 10px 1px 30px $titleshadow
+  
+  & .datainput
+    padding: 10px
+    outline: medium
+    // margin: 20px 0px 10px
+    & .datainput1
+      padding: 8px
+      box-shadow: inset 0px 0px 2px 0px rgba(193, 160, 122,0.7)
+      border: solid 1px $inputlinecolor
+      outline: medium
+      border-radius: 10px 10px 0px 0px
+    & .datainput2
+      box-shadow: inset 0px 0px 1px 0px rgba(0,0,0,0.3)
+      padding: 8px
+      border: solid 1px $inputlinecolor
+      border-top: 0px
+      outline: medium
+      border-radius: 0px 0px 10px 10px
+  & .othertext
+    padding: 10px
+    margin-top: 0px
+    line-height: 30px
+    vertical-align: middle
+    
+    & .check
+      outline: medium
+    & .signup
+      color: white
+      padding: 5px 30px
+      border-radius: 3px
+      border: none
+      outline: medium
+      box-shadow: 0px 3px 0px $buttonshadow
+      background-color: $buttoncolor
+      cursor: pointer
+      
+    & .signup:hover
+      border: none
+      outline: medium
+      top: 2px
+      box-shadow: 0px 1px 0px $hoverbuttonshadow
+      color: #ffe4d1
+      background-color: $hoverbuttoncolor
+    
+    & .signup:active
+      border: none
+      outline: medium
+      top: 1px
+      box-shadow: 0px 2px 0px $hoverbuttonshadow
+      color: #fff6ef
+      background-color: #f2be93
+    
+      & .bottomtext
+        line-height: 7px
+        cursor: pointer
+      
+      & .signin:hover
+        color: $signincolorhover
+
+
